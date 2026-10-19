@@ -1,8 +1,14 @@
-
 const express = require("express");
 const TelegramBot = require("node-telegram-bot-api");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors({
+  origin: "https://kneib84-stack.github.io",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
 
 app.use(express.json({ limit: "100kb" }));
 
